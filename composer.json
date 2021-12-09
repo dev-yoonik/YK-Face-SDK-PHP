@@ -1,0 +1,35 @@
+{
+    "name": "yoonik/face-api",
+    "description": "Functionalities for biometric processing (detection, verification and identification) for YooniK.Face.",
+    "keywords": [
+        "Yoonik",
+        "Face Authentication",
+        "php",
+        "sdk",
+        "api"
+    ],
+    "homepage": "https://yoonik.me/",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dev-yoonik",
+            "homepage": "https://github.com/dev-yoonik"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8",
+        "squizlabs/php_codesniffer": "~2.6",
+        "friendsofphp/php-cs-fixer": "~2.12"
+    },
+    "autoload": {
+        "psr-4": { "Yoonik\\Face\\" : "src/" }
+    }
+}
