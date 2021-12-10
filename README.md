@@ -3,7 +3,7 @@
 # YooniK Face API Client SDK PHP
 
 [![License](https://img.shields.io/github/license/dev-yoonik/YK-Face-SDK-PHP)](https://github.com/dev-yoonik/YK-Face-SDK-PHP/blob/master/LICENSE)
-[![Version](https://img.shields.io/packagist/v/yoonik/face-api)](https://packagist.org/packages/yoonik/face-api)
+[![Version](https://img.shields.io/github/v/release/dev-yoonik/YK-Face-SDK-PHP?display_name=tag)](https://github.com/dev-yoonik/YK-Face-SDK-PHP)
 
 This repository implements an integration SDK to facilitate the consumption of the YooniK.Face API, an [YooniK Services](https://yoonik.me) offering.
 
