@@ -176,7 +176,7 @@ class Face extends ClientSetup
      *
      * @throws \Yoonik\Face\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoonik\Face\Model\EnrolledIds
+     * @return array of strings
      */
     public function getGallery($gallery_id)
     {
@@ -184,7 +184,7 @@ class Face extends ClientSetup
         
         //encode
         $gallery_id=ObjectSerializer::toPathValue($gallery_id);
-        $returnType = '\Yoonik\Face\Model\EnrolledIds';
+        $returnType = 'string';
         $request = $this->prepareRequest(null, '/gallery/'.$gallery_id, 'GET');
 
         list($response) = $this->request($request, $returnType);

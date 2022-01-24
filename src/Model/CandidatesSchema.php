@@ -1,6 +1,7 @@
 <?php
+
 /**
- * EnrolledIds
+ * CandidatesSchema
  *
  * PHP version 5
  *
@@ -22,40 +23,42 @@ namespace Yoonik\Face\Model;
 use \Yoonik\Face\Client\Configurations\ObjectSerializer;
 
 /**
- * EnrolledIds Class 
+ * CandidatesSchema Class 
  *
  * @category Class
  * @package  Yoonik\Face
  * @author   Yoonik dev
  * @link     https://github.com/dev-yoonik/YK-Face-SDK-PHP
  */
-class EnrolledIds implements ModelInterface
+class CandidatesSchema implements ModelInterface
 {
     const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
-    protected static $modelName = 'enrolled_ids';
+     * The original name of the model.
+     *
+     * @var string
+     */
+    protected static $modelName = 'candidates_schema';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $types = [
-        
+        'template_id' => 'string',
+        'score' => 'double'
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $formats = [
-        
+        'template_id' => null,
+        'score' => 'double'
     ];
 
     /**
@@ -85,7 +88,8 @@ class EnrolledIds implements ModelInterface
      * @var string[]
      */
     protected static $attributeMap = [
-        
+        'template_id' => 'template_id',
+        'score' => 'score'
     ];
 
     /**
@@ -94,7 +98,8 @@ class EnrolledIds implements ModelInterface
      * @var string[]
      */
     protected static $setters = [
-        
+        'template_id' => 'setTemplateId',
+        'score' => 'setScore'
     ];
 
     /**
@@ -103,7 +108,8 @@ class EnrolledIds implements ModelInterface
      * @var string[]
      */
     protected static $getters = [
-        
+        'template_id' => 'getTemplateId',
+        'score' => 'getScore'
     ];
 
     /**
@@ -147,10 +153,6 @@ class EnrolledIds implements ModelInterface
         return self::$modelName;
     }
 
-    
-
-    
-
     /**
      * Associative array for storing property values
      *
@@ -166,6 +168,8 @@ class EnrolledIds implements ModelInterface
      */
     public function __construct(array $data = null)
     {
+        $this->container['template_id'] = isset($data['template_id']) ? $data['template_id'] : null;
+        $this->container['score'] = isset($data['score']) ? $data['score'] : null;
     }
 
     /**
@@ -191,7 +195,55 @@ class EnrolledIds implements ModelInterface
         return count($this->listInvalidProperties()) === 0;
     }
 
-    
+
+    /**
+     * Gets template_id
+     *
+     * @return string
+     */
+    public function getTemplateId()
+    {
+        return $this->container['template_id'];
+    }
+
+    /**
+     * Sets template_id
+     *
+     * @param string $template_id Template Id from the enrollment gallery
+     *
+     * @return $this
+     */
+    public function setTemplateId($template_id)
+    {
+        $this->container['template_id'] = $template_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets score
+     *
+     * @return double
+     */
+    public function getScore()
+    {
+        return $this->container['score'];
+    }
+
+    /**
+     * Sets score
+     *
+     * @param double $score Result score from comparing the identification template to the enrolled candidate
+     *
+     * @return $this
+     */
+    public function setScore($score)
+    {
+        $this->container['score'] = $score;
+
+        return $this;
+    }
+
 
     /**
      * Gets the string presentation of the object
@@ -210,5 +262,3 @@ class EnrolledIds implements ModelInterface
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-
