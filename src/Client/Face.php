@@ -21,6 +21,8 @@ namespace Yoonik\Face\Client;
 
 use Yoonik\Face\Client\Configurations\ClientSetup;
 use Yoonik\Face\Client\Configurations\ObjectSerializer;
+use \Yoonik\Face\Model\ProcessRequest;
+use \Yoonik\Face\Model\VerifyRequest;
 
 /**
  * Face Class 
@@ -70,8 +72,19 @@ class Face extends ClientSetup
     {
         $this->checkParameters($payload,'payload');
 
+        $process_payload = new ProcessRequest();
+        $process_payload->setImage($payload->getFirstImage());
+        $template1 = $this->process($process_payload);
+
+        $process_payload->setImage($payload->getSecondImage());
+        $template2 = $this->process($process_payload);
+
+        $payload = new VerifyRequest();
+        $payload->setFirstTemplate($template1[0]->getTemplate());
+        $payload->setSecondTemplate($template2[0]->getTemplate());
+
         $returnModel = '\Yoonik\Face\Model\MatchingResult';
-        $request = $this->prepareRequest($payload, '/face/verify_images', 'POST');
+        $request = $this->prepareRequest($payload, '/face/verify', 'POST');
 
         list($response) = $this->request($request, $returnModel);
         return $response;
