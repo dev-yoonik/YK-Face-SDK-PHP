@@ -2,7 +2,7 @@
 
 namespace Yoonik\Face\Client\Configurations;
 
-
+use ArrayObject;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
@@ -33,12 +33,18 @@ class ClientSetup
     protected $headerSelector;
 
     /**
-     * @var HeaderSelector
+     * @var ApiKey
      */
     protected $apiKey;
 
     /**
-     * @param ClientInterface $client
+     * JSON append to all body's requests
+     * 
+     * @var ConfigBody
+     */
+    protected $configBody;
+
+    /**
      * @param String   $apiKey
      * @param String   $host
      * @param Configuration   $config
@@ -160,7 +166,6 @@ class ClientSetup
     {
 
         $resourcePath = $path;
-        $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
@@ -178,11 +183,19 @@ class ClientSetup
 
         // \stdClass has no __toString(), so we should encode it manually
         if ($httpBody instanceof \stdClass) {
-            $httpBody = \GuzzleHttp\json_encode($httpBody);
+            $httpBody = json_encode($httpBody);
         }
         // array has no __toString(), so we should encode it manually
         if (is_array($httpBody)) {
-            $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+        }
+
+        if ($this->configBody) {
+            $arr = json_decode($httpBody, TRUE);
+            foreach ($this->configBody as $key => $value) {
+                $arr[$key] = $value;
+            }
+            $httpBody = json_encode($arr);
         }
 
         $defaultHeaders = [];
@@ -239,5 +252,15 @@ class ClientSetup
         }
 
         return $options;
+    }
+
+    /**
+     * Add json to body request
+     *
+     * @return array of http client options
+     */
+    public function addJSONtoBody($json)
+    {
+        $this->configBody = $json;
     }
 }
