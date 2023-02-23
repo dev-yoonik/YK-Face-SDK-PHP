@@ -4,25 +4,25 @@
  * PHP version 5
  *
  * @category Class
- * @package  Yoonik\Face
- * @author   Yoonik dev
+ * @package  Youverse\Face
+ * @author   Youverse dev
  * @link     https://github.com/dev-yoonik/YK-Face-SDK-PHP
  */
 
 /**
- * YooniK.Face API
+ * Youverse.Face API
  *
- * Functionalities for biometric processing (detection, verification and identification) for YooniK.Face.
+ * Functionalities for biometric processing (detection, verification and identification) for Youverse.Face.
  *
  */
-namespace Yoonik\Face\Client\Configurations;
+namespace Youverse\Face\Client\Configurations;
 
 /**
  * HeaderSelector Class
  *
  * @category Class
- * @package  Yoonik\Face
- * @author   Yoonik dev
+ * @package  Youverse\Face
+ * @author   Youverse dev
  * @link     https://github.com/dev-yoonik/YK-Face-SDK-PHP
  */
 class HeaderSelector

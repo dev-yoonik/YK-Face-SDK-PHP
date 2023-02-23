@@ -5,24 +5,24 @@
  * PHP version 5
  *
  * @category Class
- * @package  Yoonik\Face\Model
- * @author   Yoonik dev
+ * @package  Youverse\Face\Model
+ * @author   Youverse dev
  * @link     https://github.com/dev-yoonik/YK-Face-SDK-PHP
  */
 
 /**
- * YooniK.Face API
+ * Youverse.Face API
  *
- * Functionalities for biometric processing (detection, verification and identification) for YooniK.Face.
+ * Functionalities for biometric processing (detection, verification and identification) for Youverse.Face.
  *
  */
-namespace Yoonik\Face\Model;
+namespace Youverse\Face\Model;
 
 /**
  * Interface abstracting model access.
  *
- * @package Yoonik\Face\Model
- * @author  Yoonik dev
+ * @package Youverse\Face\Model
+ * @author  Youverse dev
  */
 interface ModelInterface
 {

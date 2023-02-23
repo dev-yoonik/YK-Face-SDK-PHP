@@ -1,14 +1,14 @@
 {
-    "name": "yoonik/face-api",
-    "description": "Functionalities for biometric processing (detection, verification and identification) for YooniK.Face.",
+    "name": "youverse/face-api",
+    "description": "Functionalities for biometric processing (detection, verification and identification) for Youverse.Face.",
     "keywords": [
-        "Yoonik",
+        "Youverse",
         "Face Authentication",
         "php",
         "sdk",
         "api"
     ],
-    "homepage": "https://yoonik.me/",
+    "homepage": "https://youverse.id/",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -29,6 +29,6 @@
         "friendsofphp/php-cs-fixer": "~2.12"
     },
     "autoload": {
-        "psr-4": { "Yoonik\\Face\\" : "src/" }
+        "psr-4": { "Youverse\\Face\\" : "src/" }
     }
 }

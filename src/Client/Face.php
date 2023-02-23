@@ -5,31 +5,31 @@
  * PHP version 5
  *
  * @category Class
- * @package  Yoonik\Face
- * @author   Yoonik dev
+ * @package  Youverse\Face
+ * @author   Youverse dev
  * @link     https://github.com/dev-yoonik/YK-Face-SDK-PHP
  */
 
 /**
- * YooniK.Face API
+ * Youverse.Face API
  *
- * Functionalities for biometric processing (detection, verification and identification) for YooniK.Face.
+ * Functionalities for biometric processing (detection, verification and identification) for Youverse.Face.
  *
  */
 
-namespace Yoonik\Face\Client;
+namespace Youverse\Face\Client;
 
-use Yoonik\Face\Client\Configurations\ClientSetup;
-use Yoonik\Face\Client\Configurations\ObjectSerializer;
-use \Yoonik\Face\Model\ProcessRequest;
-use \Yoonik\Face\Model\VerifyRequest;
+use Youverse\Face\Client\Configurations\ClientSetup;
+use Youverse\Face\Client\Configurations\ObjectSerializer;
+use \Youverse\Face\Model\ProcessRequest;
+use \Youverse\Face\Model\VerifyRequest;
 
 /**
  * Face Class 
  *
  * @category Class
- * @package  Yoonik\Face
- * @author   Yoonik dev
+ * @package  Youverse\Face
+ * @author   Youverse dev
  * @link     https://github.com/dev-yoonik/YK-Face-SDK-PHP
  */
 class Face extends ClientSetup
@@ -40,17 +40,17 @@ class Face extends ClientSetup
      *
      * Compares two descriptors and outputs a similarity score
      *
-     * @param  \Yoonik\Face\Model\VerifyRequest $payload payload (required)
+     * @param  \Youverse\Face\Model\VerifyRequest $payload payload (required)
      *
-     * @throws \Yoonik\Face\ApiException on non-2xx response
+     * @throws \Youverse\Face\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoonik\Face\Model\MatchingResult
+     * @return \Youverse\Face\Model\MatchingResult
      */
     public function verify($payload)
     {
         $this->checkParameters($payload,'payload');
 
-        $returnModel = '\Yoonik\Face\Model\MatchingResult';
+        $returnModel = '\Youverse\Face\Model\MatchingResult';
         $request = $this->prepareRequest($payload, '/face/verify', 'POST');
 
         list($response) = $this->request($request, $returnModel);
@@ -60,13 +60,13 @@ class Face extends ClientSetup
     /**
      * Operation verifyImages
      *
-     * Given an image and a set of configuration parameters and minimal set of parameters return an array of Yoonik biometric object
+     * Given an image and a set of configuration parameters and minimal set of parameters return an array of Youverse biometric object
      *
-     * @param  \Yoonik\Face\Model\VerifyImages $payload payload (required)
+     * @param  \Youverse\Face\Model\VerifyImages $payload payload (required)
      *
-     * @throws \Yoonik\Face\ApiException on non-2xx response
+     * @throws \Youverse\Face\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoonik\Face\Model\MatchingResult
+     * @return \Youverse\Face\Model\MatchingResult
      */
     public function verifyImages($payload)
     {
@@ -83,7 +83,7 @@ class Face extends ClientSetup
         $payload->setFirstTemplate($template1[0]->getTemplate());
         $payload->setSecondTemplate($template2[0]->getTemplate());
 
-        $returnModel = '\Yoonik\Face\Model\MatchingResult';
+        $returnModel = '\Youverse\Face\Model\MatchingResult';
         $request = $this->prepareRequest($payload, '/face/verify', 'POST');
 
         list($response) = $this->request($request, $returnModel);
@@ -93,19 +93,19 @@ class Face extends ClientSetup
     /**
      * Operation process
      *
-     * Given an image and a set of configuration parameters return an array of Yoonik biometric object
+     * Given an image and a set of configuration parameters return an array of Youverse biometric object
      *
-     * @param  \Yoonik\Face\Model\ProcessRequest $payload payload (required)
+     * @param  \Youverse\Face\Model\ProcessRequest $payload payload (required)
      *
-     * @throws \Yoonik\Face\ApiException on non-2xx response
+     * @throws \Youverse\Face\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoonik\Face\Model\ProcessResponse
+     * @return \Youverse\Face\Model\ProcessResponse
      */
     public function process($payload)
     {
         $this->checkParameters($payload,'payload');
 
-        $returnModel = '\Yoonik\Face\Model\ProcessResponse';
+        $returnModel = '\Youverse\Face\Model\ProcessResponse';
         $request = $this->prepareRequest($payload, '/face/process', 'POST');
 
         list($response) = $this->request($request, $returnModel);
@@ -117,17 +117,17 @@ class Face extends ClientSetup
      *
      * Search an identification template against the enrollment set of a specified gallery
      *
-     * @param  \Yoonik\Face\Model\IdentifyRequest $payload payload (required)
+     * @param  \Youverse\Face\Model\IdentifyRequest $payload payload (required)
      *
-     * @throws \Yoonik\Face\ApiException on non-2xx response
+     * @throws \Youverse\Face\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoonik\Face\Model\CandidatesSchema
+     * @return \Youverse\Face\Model\CandidatesSchema
      */
     public function identify($payload)
     {
         $this->checkParameters($payload,'payload');
 
-        $returnModel = '\Yoonik\Face\Model\CandidatesSchema';
+        $returnModel = '\Youverse\Face\Model\CandidatesSchema';
         $request = $this->prepareRequest($payload, '/face/identify', 'POST');
 
         list($response) = $this->request($request, $returnModel);
@@ -139,17 +139,17 @@ class Face extends ClientSetup
      *
      * Match template with a specific id in a gallery
      *
-     * @param  \Yoonik\Face\Model\VerifyIdRequest $payload payload (required)
+     * @param  \Youverse\Face\Model\VerifyIdRequest $payload payload (required)
      *
-     * @throws \Yoonik\Face\ApiException on non-2xx response
+     * @throws \Youverse\Face\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoonik\Face\Model\MatchingResult
+     * @return \Youverse\Face\Model\MatchingResult
      */
     public function verifyId($payload)
     {
         $this->checkParameters($payload,'payload');
 
-        $returnModel = '\Yoonik\Face\Model\MatchingResult';
+        $returnModel = '\Youverse\Face\Model\MatchingResult';
         $request = $this->prepareRequest($payload, '/face/verify_id', 'POST');
 
         list($response) = $this->request($request, $returnModel);
@@ -163,7 +163,7 @@ class Face extends ClientSetup
      *
      * @param  string $gallery_id Gallery name or identifier. (required)
      *
-     * @throws \Yoonik\Face\ApiException on non-2xx response
+     * @throws \Youverse\Face\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -187,7 +187,7 @@ class Face extends ClientSetup
      *
      * @param  string $gallery_id Gallery name or identifier. (required)
      *
-     * @throws \Yoonik\Face\ApiException on non-2xx response
+     * @throws \Youverse\Face\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of strings
      */
@@ -211,7 +211,7 @@ class Face extends ClientSetup
      *
      * @param  string $gallery_id Gallery name or identifier. (required)
      *
-     * @throws \Yoonik\Face\ApiException on non-2xx response
+     * @throws \Youverse\Face\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -234,9 +234,9 @@ class Face extends ClientSetup
      *
      * @param  string $gallery_id Gallery name or identifier. (required)
      * @param  string $person_id Person id (required)
-     * @param  \Yoonik\Face\Model\TemplateRequest $payload payload (required)
+     * @param  \Youverse\Face\Model\TemplateRequest $payload payload (required)
      *
-     * @throws \Yoonik\Face\ApiException on non-2xx response
+     * @throws \Youverse\Face\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -263,9 +263,9 @@ class Face extends ClientSetup
      * @param  string $gallery_id Gallery name or identifier. (required)
      * @param  string $person_id Person id (required)
      *
-     * @throws \Yoonik\Face\ApiException on non-2xx response
+     * @throws \Youverse\Face\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoonik\Face\Model\TemplateRequest
+     * @return \Youverse\Face\Model\TemplateRequest
      */
     public function getTemplateToGallery($gallery_id, $person_id)
     {
@@ -275,7 +275,7 @@ class Face extends ClientSetup
         //encode
         $gallery_id=ObjectSerializer::toPathValue($gallery_id);
         $person_id=ObjectSerializer::toPathValue($person_id);
-        $returnType = '\Yoonik\Face\Model\TemplateRequest';
+        $returnType = '\Youverse\Face\Model\TemplateRequest';
         $request = $this->prepareRequest(null, "/gallery/$gallery_id/$person_id", 'GET');
 
         list($response) = $this->request($request, $returnType);
@@ -290,7 +290,7 @@ class Face extends ClientSetup
      * @param  string $gallery_id Gallery name or identifier. (required)
      * @param  string $person_id Person id (required)
      *
-     * @throws \Yoonik\Face\ApiException on non-2xx response
+     * @throws \Youverse\Face\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */

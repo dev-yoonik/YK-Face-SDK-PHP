@@ -4,12 +4,12 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 $apiKey = "YOUR-X-API-KEY";
 $baseUrl = "YOUR-API-ENDPOINT";
 
-$client = new Yoonik\Face\Client\Face(
+$client = new Youverse\Face\Client\Face(
     $apiKey,
     $baseUrl
 );
 
-$payload = new Yoonik\Face\Model\ProcessRequest();
+$payload = new Youverse\Face\Model\ProcessRequest();
 
 //convert image to base64
 $im = file_get_contents("<IMAGE_PATH>");

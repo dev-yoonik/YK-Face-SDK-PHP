@@ -1,13 +1,13 @@
 ![https://yk-website-images.s3.eu-west-1.amazonaws.com/LogoV4_TRANSPARENT.png](https://yk-website-images.s3.eu-west-1.amazonaws.com/LogoV4_TRANSPARENT.png)
 
-# YooniK Face API Client SDK PHP
+# Youverse Face API Client SDK PHP
 
 [![License](https://img.shields.io/github/license/dev-yoonik/YK-Face-SDK-PHP)](https://github.com/dev-yoonik/YK-Face-SDK-PHP/blob/master/LICENSE)
 [![Version](https://img.shields.io/github/v/release/dev-yoonik/YK-Face-SDK-PHP?display_name=tag)](https://github.com/dev-yoonik/YK-Face-SDK-PHP)
 
-This repository implements an integration SDK to facilitate the consumption of the YooniK.Face API, an [YooniK Services](https://yoonik.me) offering.
+This repository implements an integration SDK to facilitate the consumption of the Youverse.Face API, an [Youverse Services](https://youverse.id) offering.
 
-For more information please [contact us](mailto:tech@yoonik.me).
+For more information please [contact us](mailto:tech@youverse.id).
 
 ## Requirements
 
@@ -16,7 +16,7 @@ PHP 5.5 and later
 ## Getting Started
 
 ```
-composer require yoonik/face-api
+composer require youverse/face-api
 ```
 
 ## Example
@@ -31,12 +31,12 @@ $baseUrl = "YOUR-API-ENDPOINT";
 $image1 = "<IMAGE_PATH>";
 $image2 = "<IMAGE_PATH>";
 
-$client = new Yoonik\Face\Client\Face(
+$client = new Youverse\Face\Client\Face(
     $apiKey,
     $baseUrl
 );
 
-$payload = new Yoonik\Face\Model\VerifyImages();
+$payload = new Youverse\Face\Model\VerifyImages();
 
 //convert image 1 to base64
 $img = file_get_contents($image1);
@@ -56,4 +56,4 @@ try {
 }
 ```
 
-If you're interested in using YooniK.Face API for identification purposes, please visit our [examples](https://github.com/dev-yoonik/YK-Face-SDK-PHP/tree/main/examples).
+If you're interested in using Youverse.Face API for identification purposes, please visit our [examples](https://github.com/dev-yoonik/YK-Face-SDK-PHP/tree/main/examples).

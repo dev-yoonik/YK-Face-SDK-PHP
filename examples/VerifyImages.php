@@ -6,12 +6,12 @@ $baseUrl = "YOUR-API-ENDPOINT";
 $image1 = "<IMAGE_PATH>";
 $image2 = "<IMAGE_PATH>";
 
-$client = new Yoonik\Face\Client\Face(
+$client = new Youverse\Face\Client\Face(
     $apiKey,
     $baseUrl
 );
 
-$payload = new Yoonik\Face\Model\VerifyImages();
+$payload = new Youverse\Face\Model\VerifyImages();
 
 //convert image to base64
 $img = file_get_contents($image1);

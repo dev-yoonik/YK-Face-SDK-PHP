@@ -6,25 +6,25 @@
  * PHP version 5
  *
  * @category Class
- * @package  Yoonik\Face
- * @author   Yoonik dev
+ * @package  Youverse\Face
+ * @author   Youverse dev
  * @link     https://github.com/dev-yoonik/YK-Face-SDK-PHP
  */
 
 /**
- * YooniK.Face API
+ * Youverse.Face API
  *
- * Functionalities for biometric processing (detection, verification and identification) for YooniK.Face.
+ * Functionalities for biometric processing (detection, verification and identification) for Youverse.Face.
  *
  */
-namespace Yoonik\Face\Client\Configurations;
+namespace Youverse\Face\Client\Configurations;
 
 /**
  * ObjectSerializer Class 
  *
  * @category Class
- * @package  Yoonik\Face
- * @author   Yoonik dev
+ * @package  Youverse\Face
+ * @author   Youverse dev
  * @link     https://github.com/dev-yoonik/YK-Face-SDK-PHP
  */
 class ObjectSerializer
@@ -311,7 +311,7 @@ class ObjectSerializer
             // If a discriminator is defined and points to a valid subclass, use it.
             $discriminator = $class::DISCRIMINATOR;
             if (!empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
-                $subclass = '\Yoonik\Face\Model\\' . $data->{$discriminator};
+                $subclass = '\Youverse\Face\Model\\' . $data->{$discriminator};
                 if (is_subclass_of($subclass, $class)) {
                     $class = $subclass;
                 }

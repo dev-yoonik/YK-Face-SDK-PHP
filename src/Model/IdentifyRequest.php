@@ -5,27 +5,27 @@
  * PHP version 5
  *
  * @category Class
- * @package  Yoonik\Face
- * @author   Yoonik dev
+ * @package  Youverse\Face
+ * @author   Youverse dev
  * @link     https://github.com/dev-yoonik/YK-Face-SDK-PHP
  */
 
 /**
- * YooniK.Face API
+ * Youverse.Face API
  *
- * Functionalities for biometric processing (detection, verification and identification) for YooniK.Face.
+ * Functionalities for biometric processing (detection, verification and identification) for Youverse.Face.
  *
  */
-namespace Yoonik\Face\Model;
+namespace Youverse\Face\Model;
 
-use \Yoonik\Face\Client\Configurations\ObjectSerializer;
+use \Youverse\Face\Client\Configurations\ObjectSerializer;
 
 /**
  * IdentifyRequest Class 
  *
  * @category Class
- * @package  Yoonik\Face
- * @author   Yoonik dev
+ * @package  Youverse\Face
+ * @author   Youverse dev
  * @link     https://github.com/dev-yoonik/YK-Face-SDK-PHP
  */
 class IdentifyRequest implements ModelInterface

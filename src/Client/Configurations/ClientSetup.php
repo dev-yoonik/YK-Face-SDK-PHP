@@ -1,6 +1,6 @@
 <?php
 
-namespace Yoonik\Face\Client\Configurations;
+namespace Youverse\Face\Client\Configurations;
 
 use ArrayObject;
 use GuzzleHttp\Client;
@@ -8,10 +8,10 @@ use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Yoonik\Face\Client\Configurations\ApiException;
-use Yoonik\Face\Client\Configurations\Configuration;
-use Yoonik\Face\Client\Configurations\HeaderSelector;
-use Yoonik\Face\Client\Configurations\ObjectSerializer;
+use Youverse\Face\Client\Configurations\ApiException;
+use Youverse\Face\Client\Configurations\Configuration;
+use Youverse\Face\Client\Configurations\HeaderSelector;
+use Youverse\Face\Client\Configurations\ObjectSerializer;
 
 
 class ClientSetup
@@ -75,9 +75,9 @@ class ClientSetup
      * @param  \GuzzleHttp\Psr7\Request $request (required)
      * @param  String $returnModel (required)
      *
-     * @throws \Yoonik\Face\ApiException on non-2xx response
+     * @throws \Youverse\Face\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoonik\Face\Model\MatchingResult
+     * @return array of \Youverse\Face\Model\MatchingResult
      */
     protected function request($request, $returnModel)
     {
@@ -131,7 +131,7 @@ class ClientSetup
      * @param  $response (required)
      * @param  String $uri (required)
      *
-     * @throws \Yoonik\Face\ApiException on non-2xx response
+     * @throws \Youverse\Face\ApiException on non-2xx response
      * @return void
      */
     protected function checkStatusCode($response, $uri)
